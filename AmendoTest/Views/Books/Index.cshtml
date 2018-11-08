@@ -1,0 +1,41 @@
+﻿@model IEnumerable<AmendoTest.Models.Book>
+
+@{
+    ViewBag.Title = "Список книг";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<p>
+    @Html.ActionLink("Добавить книгу", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.BookName)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.Author.FullName)
+        </th>
+        <th>
+            Действия
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.BookName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Author.FullName)
+        </td>
+
+        <td>
+            @Html.ActionLink("Изменить", "Edit", new { id = item.BookID }, new { @class = "ChangeLink" }) |
+            @Html.ActionLink("Удалить", "Delete", new { id = item.BookID }, new { @class = "DeleteLink" })
+        </td>
+    </tr>
+}
+
+</table>

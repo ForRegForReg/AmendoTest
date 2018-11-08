@@ -1,0 +1,39 @@
+﻿@model AmendoTest.Models.Book
+
+@{
+    ViewBag.Title = "Удаление книги";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@Html.ActionLink("Назад", "Index", new object { }, new { @class = "BackToList" })
+<h3>Вы уверены, что хотите удалить эту книгу?</h3>
+<div>
+
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.BookName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Author.FullName)
+            </th>
+        </tr>
+        <tr>
+            <td>
+                @Html.DisplayFor(model => model.BookName)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.Author.FullName)
+            </td>
+        </tr>
+    </table>
+
+        @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Удалить" class="btn btn-default" />
+        </div>
+        <p></p>
+}
+</div>
