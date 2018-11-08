@@ -15,10 +15,10 @@ namespace AmendoTest.Models
             db.Authors.Add(tolstoi);
             db.Authors.Add(pushkin);
 
-            db.Books.Add(new Book() { BookName = "Война и Мир", Author = tolstoi });
-            db.Books.Add(new Book() { BookName = "Анна Каренина", Author = tolstoi });
-            db.Books.Add(new Book() { BookName = "Выстрел", Author = pushkin });
-            db.Books.Add(new Book() { BookName = "Метель", Author = pushkin });
+            db.Books.Add(new Book { BookName = "Война и Мир", Author = tolstoi });
+            db.Books.Add(new Book { BookName = "Анна Каренина", Author = tolstoi });
+            db.Books.Add(new Book { BookName = "Выстрел", Author = pushkin });
+            db.Books.Add(new Book { BookName = "Метель", Author = pushkin });
             base.Seed(db);
         }
     }
